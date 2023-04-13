@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBancoDigital.Android", "AppBancoDigital.Android\AppBancoDigital.Android.csproj", "{D6F863A9-C291-4D74-95BE-9E466B97E451}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBancoDigital", "AppBancoDigital\AppBancoDigital.csproj", "{B165409D-1E60-4756-BCB7-4FC0D39E23F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6F863A9-C291-4D74-95BE-9E466B97E451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F863A9-C291-4D74-95BE-9E466B97E451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F863A9-C291-4D74-95BE-9E466B97E451}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D6F863A9-C291-4D74-95BE-9E466B97E451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F863A9-C291-4D74-95BE-9E466B97E451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F863A9-C291-4D74-95BE-9E466B97E451}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B165409D-1E60-4756-BCB7-4FC0D39E23F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B165409D-1E60-4756-BCB7-4FC0D39E23F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B165409D-1E60-4756-BCB7-4FC0D39E23F8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B165409D-1E60-4756-BCB7-4FC0D39E23F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B165409D-1E60-4756-BCB7-4FC0D39E23F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B165409D-1E60-4756-BCB7-4FC0D39E23F8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFAC7941-FF29-45F0-A7C9-0BEFAF33728E}
+	EndGlobalSection
+EndGlobal
