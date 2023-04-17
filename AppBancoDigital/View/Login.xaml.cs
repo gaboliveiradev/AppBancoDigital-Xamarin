@@ -15,6 +15,7 @@ namespace AppBancoDigital.View
         public Login()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

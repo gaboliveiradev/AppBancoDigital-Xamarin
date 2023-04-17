@@ -7,14 +7,27 @@
 
             <Style TargetType="Label" x:Key="lbl_logo">
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontSize" Value="Title" />
                 <Setter Property="TextColor" Value="#333" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="Text" Value="ETEC BANCO" />
+                <Setter Property="Text" Value="" />
 
                 <Setter Property="Grid.Column" Value="0" />
                 <Setter Property="Grid.Row" Value="0" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="lbl_subtitulo">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Title" />
+                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Text" Value="Fazer Login" />
+                <Setter Property="Margin" Value="22, 0, 0, 0" />
+
+                <Setter Property="Grid.Column" Value="0" />
+                <Setter Property="Grid.Row" Value="1" />
             </Style>
 
             <Style TargetType="Entry" x:Key="ety_cpf">
@@ -24,7 +37,7 @@
                 <Setter Property="WidthRequest" Value="350" />
 
                 <Setter Property="Grid.Column" Value="0" />
-                <Setter Property="Grid.Row" Value="1" />
+                <Setter Property="Grid.Row" Value="2" />
             </Style>
 
             <Style TargetType="Entry" x:Key="ety_senha">
@@ -34,7 +47,7 @@
                 <Setter Property="WidthRequest" Value="350" />
 
                 <Setter Property="Grid.Column" Value="0" />
-                <Setter Property="Grid.Row" Value="2" />
+                <Setter Property="Grid.Row" Value="3" />
             </Style>
 
             <Style TargetType="Button" x:Key="btn_logar">
@@ -46,7 +59,7 @@
                 <Setter Property="TextColor" Value="#FFF" />
 
                 <Setter Property="Grid.Column" Value="0" />
-                <Setter Property="Grid.Row" Value="3" />
+                <Setter Property="Grid.Row" Value="4" />
             </Style>
 
             <Style TargetType="Label" x:Key="lbl_criar_conta">

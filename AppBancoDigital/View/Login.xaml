@@ -3,14 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancoDigital.View.Login">
     <ContentPage.Content>
-        <Grid RowDefinitions="*, *, *, *, *, *, * " ColumnDefinitions="*">
-            <Label x:Name="lbl_logo" Style="{StaticResource lbl_logo}"/>
-            <Entry x:Name="ety_cpf" Style="{StaticResource ety_cpf}" />
-            <Entry x:Name="ety_senha" Style="{StaticResource ety_senha}" />
-            <Button x:Name="btn_logar" Style="{StaticResource btn_logar}" />
-            <StackLayout Grid.Column="0" Grid.Row="4">
-                <Label x:Name="lbl_criar_conta" Style="{StaticResource lbl_criar_conta}" />
-                <Label x:Name="lbl_esqueci_senha" Style="{StaticResource lbl_esqueci_senha}" />
+        <Grid RowDefinitions="*" ColumnDefinitions="*">
+            <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*">
+                    <Label x:Name="lbl_logo" Style="{StaticResource lbl_logo}"/>
+                    <Label x:Name="lbl_subtitulo" Style="{StaticResource lbl_subtitulo}"/>
+                    <Entry x:Name="ety_cpf" Style="{StaticResource ety_cpf}" />
+                    <Entry x:Name="ety_senha" Style="{StaticResource ety_senha}" />
+                    <Button x:Name="btn_logar" Style="{StaticResource btn_logar}" />
+                    <StackLayout Grid.Column="0" Grid.Row="5">
+                        <Label x:Name="lbl_criar_conta" Style="{StaticResource lbl_criar_conta}" />
+                        <Label x:Name="lbl_esqueci_senha" Style="{StaticResource lbl_esqueci_senha}" />
+                    </StackLayout>
+                </Grid>
+
             </StackLayout>
         </Grid>
     </ContentPage.Content>
