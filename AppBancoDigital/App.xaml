@@ -3,6 +3,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancoDigital.App">
     <Application.Resources>
+        <ResourceDictionary>
 
+            <Style TargetType="Label" x:Key="lbl_logo">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="TextColor" Value="#333" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Text" Value="ETEC BANCO" />
+
+                <Setter Property="Grid.Column" Value="0" />
+                <Setter Property="Grid.Row" Value="0" />
+            </Style>
+
+            <Style TargetType="Entry" x:Key="ety_cpf">
+                <Setter Property="Placeholder" Value="digite seu cpf" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="350" />
+
+                <Setter Property="Grid.Column" Value="0" />
+                <Setter Property="Grid.Row" Value="1" />
+            </Style>
+
+            <Style TargetType="Entry" x:Key="ety_senha">
+                <Setter Property="Placeholder" Value="digite sua senha" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="350" />
+
+                <Setter Property="Grid.Column" Value="0" />
+                <Setter Property="Grid.Row" Value="2" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="btn_logar">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="350" />
+                <Setter Property="Text" Value="Logar" />
+                <Setter Property="BackgroundColor" Value="Blue" />
+                <Setter Property="TextColor" Value="#FFF" />
+
+                <Setter Property="Grid.Column" Value="0" />
+                <Setter Property="Grid.Row" Value="3" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="lbl_criar_conta">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="350" />
+                <Setter Property="Text" Value="Não possui uma conta? Clique aqui!" />
+                <Setter Property="TextColor" Value="Blue" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="lbl_esqueci_senha">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="350" />
+                <Setter Property="Text" Value="Esqueceu sua senha? Clique aqui!" />
+                <Setter Property="TextColor" Value="Blue" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
