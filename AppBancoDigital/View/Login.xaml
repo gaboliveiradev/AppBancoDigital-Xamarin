@@ -4,15 +4,17 @@
              x:Class="AppBancoDigital.View.Login">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout x:Name="stc__logo">
+                <Image x:Name="logo" />
+            </StackLayout>
             <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*">
-                <Label x:Name="lbl_logo" Style="{StaticResource lbl_logo}"/>
-                <Label x:Name="lbl_subtitulo" Style="{StaticResource lbl_subtitulo}"/>
-                <Entry x:Name="ety_cpf" Style="{StaticResource ety_cpf}" />
-                <Entry x:Name="ety_senha" Style="{StaticResource ety_senha}" />
-                <Button Clicked="btn_logar_Clicked" x:Name="btn_logar" Style="{StaticResource btn_logar}" />
+                <Label x:Name="lbl_subtitulo" Style="{StaticResource lbl__subtitulo}"/>
+                <Entry x:Name="ety_cpf" Style="{StaticResource ety__cpf}" />
+                <Entry x:Name="ety_senha" Style="{StaticResource ety__senha}" />
+                <Button Clicked="btn_logar_Clicked" x:Name="btn_logar" Style="{StaticResource btn__logar}" />
                 <StackLayout Grid.Column="0" Grid.Row="5">
-                    <Label x:Name="lbl_criar_conta" Style="{StaticResource lbl_criar_conta}" />
-                    <Label x:Name="lbl_esqueci_senha" Style="{StaticResource lbl_esqueci_senha}" />
+                    <Label x:Name="lbl_criar_conta" Style="{StaticResource lbl__criar_conta}" />
+                    <Label x:Name="lbl_esqueci_senha" Style="{StaticResource lbl__esqueci_senha}" />
                 </StackLayout>
             </Grid>
         </StackLayout>

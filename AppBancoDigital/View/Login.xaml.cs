@@ -16,6 +16,8 @@ namespace AppBancoDigital.View
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+
+            logo.Source = ImageSource.FromResource("AppBancoDigital.Assets.logo.png");
         }
 
         private void btn_logar_Clicked(object sender, EventArgs e)
