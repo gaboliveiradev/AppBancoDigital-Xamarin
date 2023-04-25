@@ -12,6 +12,12 @@ namespace AppBancoDigital.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
     {
+        public void onOfLoader(bool s)
+        {
+            loader.IsVisible = s;
+            loader.IsRunning = s;
+        }
+
         public Login()
         {
             InitializeComponent();
@@ -22,7 +28,7 @@ namespace AppBancoDigital.View
 
         private void btn_logar_Clicked(object sender, EventArgs e)
         {
-            loader.IsRunning = true;
+            onOfLoader(true);
         }
     }
 }
