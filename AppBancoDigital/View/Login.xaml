@@ -5,15 +5,17 @@
              xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <ActivityIndicator x:Name="loader" Color="blue" IsRunning="false" IsVisible="false" />
             <StackLayout x:Name="stc__logo">
                 <Image x:Name="logo" HeightRequest="90" />
             </StackLayout>
             <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*">
                 <Label x:Name="lbl_subtitulo" Style="{StaticResource lbl__subtitulo}"/>
                 <StackLayout Style="{StaticResource stc__cpf}">
-                    <control:MaskedEntry Keyboard="Numeric" Placeholder="digite seu cpf" Mask="XXX.XXX.XXX-XX" ></control:MaskedEntry>
+                    <!--<Label Text="CPF" FontSize="Body" TextColor="#000" HeightRequest="20"/>-->
+                    <control:MaskedEntry Keyboard="Numeric" Placeholder="digite seu cpf" Mask="XXX.XXX.XXX-XX" ClearButtonVisibility="WhileEditing" ></control:MaskedEntry>
                 </StackLayout>
-                <Entry x:Name="ety_senha" Style="{StaticResource ety__senha}" />
+                <Entry IsPassword="True" x:Name="ety_senha" Style="{StaticResource ety__senha}" />
                 <Button Clicked="btn_logar_Clicked" x:Name="btn_logar" Style="{StaticResource btn__logar}" />
                 <StackLayout Grid.Column="0" Grid.Row="5">
                     <Label x:Name="lbl_criar_conta" Style="{StaticResource lbl__criar_conta}" />

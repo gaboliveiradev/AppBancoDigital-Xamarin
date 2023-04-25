@@ -22,7 +22,7 @@ namespace AppBancoDigital.View
 
         private void btn_logar_Clicked(object sender, EventArgs e)
         {
-
+            loader.IsRunning = true;
         }
     }
 }
