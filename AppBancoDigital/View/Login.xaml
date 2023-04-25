@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <StackLayout x:Name="stc__logo">
-                <Image x:Name="logo" />
+                <Image x:Name="logo" HeightRequest="90" />
             </StackLayout>
             <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*">
                 <Label x:Name="lbl_subtitulo" Style="{StaticResource lbl__subtitulo}"/>
