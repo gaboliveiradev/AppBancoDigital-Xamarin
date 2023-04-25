@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancoDigital.View.Login">
+             x:Class="AppBancoDigital.View.Login"
+             xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <StackLayout x:Name="stc__logo">
@@ -9,7 +10,9 @@
             </StackLayout>
             <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*">
                 <Label x:Name="lbl_subtitulo" Style="{StaticResource lbl__subtitulo}"/>
-                <Entry x:Name="ety_cpf" Style="{StaticResource ety__cpf}" />
+                <StackLayout Style="{StaticResource stc__cpf}">
+                    <control:MaskedEntry Keyboard="Numeric" Placeholder="digite seu cpf" Mask="XXX.XXX.XXX-XX" ></control:MaskedEntry>
+                </StackLayout>
                 <Entry x:Name="ety_senha" Style="{StaticResource ety__senha}" />
                 <Button Clicked="btn_logar_Clicked" x:Name="btn_logar" Style="{StaticResource btn__logar}" />
                 <StackLayout Grid.Column="0" Grid.Row="5">

@@ -26,8 +26,7 @@
                 <Setter Property="Grid.Row" Value="1" />
             </Style>
 
-            <Style TargetType="Entry" x:Key="ety__cpf">
-                <Setter Property="Placeholder" Value="digite seu cpf" />
+            <Style TargetType="StackLayout" x:Key="stc__cpf">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="WidthRequest" Value="350" />
