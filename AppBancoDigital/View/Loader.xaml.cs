@@ -21,6 +21,7 @@ namespace AppBancoDigital.View
             logo.Source = ImageSource.FromResource("AppBancoDigital.Assets.logo_back_purple.png");
         }
 
+        // Metodo chamado toda vez que a tela é exibida
         protected override void OnAppearing()
         {
             System.Threading.Tasks.Task.Run(async () =>
