@@ -22,7 +22,7 @@ namespace AppBancoDigital.Droid
 
             Window.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
             Window.AddFlags(Android.Views.WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("blue"));
+            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#711cb6"));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
