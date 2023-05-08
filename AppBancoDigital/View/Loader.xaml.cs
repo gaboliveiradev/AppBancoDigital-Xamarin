@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -28,9 +29,9 @@ namespace AppBancoDigital.View
             {
                 while (true)
                 {
-                    await logo.ScaleTo(1, 500, Easing.CubicIn);
-                    await logo.ScaleTo(1.2, 500, Easing.CubicOut);
-                    await logo.ScaleTo(1, 500, Easing.CubicIn);
+                    await logo.ScaleTo(1, 200, Easing.CubicIn);
+                    await logo.ScaleTo(1.2, 200, Easing.CubicIn);
+                    await logo.ScaleTo(1, 200, Easing.CubicIn);
 
                     // Girando a Imagem em 360º
                     /*for(int i = 1; i < 10; i++)
