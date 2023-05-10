@@ -5,9 +5,9 @@
              xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <ActivityIndicator x:Name="loader" Color="blue" IsRunning="false" IsVisible="false" />
-            <StackLayout x:Name="stc__logo">
-                <Image x:Name="logo" HeightRequest="90" />
+            <ActivityIndicator x:Name="loader" Color="#711cb6" IsRunning="false" IsVisible="false" />
+            <StackLayout x:Name="stc__logo" >
+                <Image x:Name="logo" HeightRequest="150" />
             </StackLayout>
             <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*">
                 <Label x:Name="lbl_subtitulo" Style="{StaticResource lbl__subtitulo}"/>

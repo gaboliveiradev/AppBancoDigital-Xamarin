@@ -16,7 +16,7 @@
             <Style TargetType="Label" x:Key="lbl__subtitulo">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="Title" />
-                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="TextColor" Value="#711cb6" />
                 <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Text" Value="Fazer Login" />
@@ -51,7 +51,7 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="WidthRequest" Value="350" />
                 <Setter Property="Text" Value="Logar" />
-                <Setter Property="BackgroundColor" Value="Blue" />
+                <Setter Property="BackgroundColor" Value="#711cb6" />
                 <Setter Property="TextColor" Value="#FFF" />
 
                 <Setter Property="Grid.Column" Value="0" />
@@ -62,14 +62,14 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="WidthRequest" Value="350" />
                 <Setter Property="Text" Value="Não possui uma conta? Clique aqui!" />
-                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="TextColor" Value="#711cb6" />
             </Style>
 
             <Style TargetType="Label" x:Key="lbl__esqueci_senha">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="WidthRequest" Value="350" />
                 <Setter Property="Text" Value="Esqueceu sua senha? Clique aqui!" />
-                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="TextColor" Value="#711cb6" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
