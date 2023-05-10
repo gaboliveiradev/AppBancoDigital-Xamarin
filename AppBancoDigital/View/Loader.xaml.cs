@@ -23,26 +23,16 @@ namespace AppBancoDigital.View
         }
 
         // Metodo chamado toda vez que a tela é exibida
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
-            System.Threading.Tasks.Task.Run(async () =>
+            for (int i = 0; i < 6; i++)
             {
-                while (true)
-                {
-                    await logo.ScaleTo(1, 200, Easing.CubicIn);
-                    await logo.ScaleTo(1.2, 200, Easing.CubicIn);
-                    await logo.ScaleTo(1, 200, Easing.CubicIn);
+                await logo.ScaleTo(1, 200, Easing.CubicIn);
+                await logo.ScaleTo(1.2, 200, Easing.CubicIn);
+                await logo.ScaleTo(1, 200, Easing.CubicIn);
+            }
 
-                    // Girando a Imagem em 360º
-                    /*for(int i = 1; i < 10; i++)
-                    {
-                        if(logo.Rotation >= 360f) logo.Rotation = 0;
-
-                        double rotation = i * (360 / 9);
-                        await logo.RotateTo(i * (360 / 9), 1000, Easing.Linear);
-                    }*/
-                }
-            });
+            await Navigation.PushAsync(new Login());
         }
     }
 }
