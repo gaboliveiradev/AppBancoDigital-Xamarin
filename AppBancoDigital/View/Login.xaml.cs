@@ -37,6 +37,9 @@ namespace AppBancoDigital.View
             await stc__cpf.TranslateTo(-375, 0, time_animation, Easing.CubicOut);
             await stc__password.TranslateTo(375, 0, time_animation, Easing.CubicOut);
             await stc__btn__logar.TranslateTo(0, 220, time_animation, Easing.CubicOut);
+            logo.IsVisible = false;
+            await details.TranslateTo(0, -300, time_animation, Easing.CubicOut);
+            gridLogin.IsVisible = false;
         }
 
         public Login()
@@ -65,7 +68,7 @@ namespace AppBancoDigital.View
             await stc__btn__logar.TranslateTo(0, 0, time_animation, Easing.CubicOut);
         }
 
-        private async void onClickLabelCriarConta_Tapped(object sender, EventArgs e)
+        private void onClickLabelCriarConta_Tapped(object sender, EventArgs e)
         {
             hideLogin();
         }

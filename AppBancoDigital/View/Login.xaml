@@ -7,7 +7,8 @@
     <!--<control:MaskedEntry Keyboard="Numeric" Placeholder="digite seu cpf" Mask="XXX.XXX.XXX-XX" ClearButtonVisibility="WhileEditing" ></control:MaskedEntry>-->
     
     <ContentPage.Content>
-        <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*, *, *" IsVisible="true" x:Name="gridLogin">
+        <StackLayout>
+        <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*, *, *" IsVisible="false" x:Name="gridLogin">
             <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" >
                 <Image x:Name="details" Aspect="AspectFill" HeightRequest="300" />
             </StackLayout>
@@ -49,5 +50,10 @@
                 </Label>
             </StackLayout>
         </Grid>
+
+        <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*, *, *" IsVisible="false" x:Name="gridCadastrar" >
+            
+        </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
