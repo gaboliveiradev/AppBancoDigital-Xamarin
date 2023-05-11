@@ -7,7 +7,7 @@
     <!--<control:MaskedEntry Keyboard="Numeric" Placeholder="digite seu cpf" Mask="XXX.XXX.XXX-XX" ClearButtonVisibility="WhileEditing" ></control:MaskedEntry>-->
     
     <ContentPage.Content>
-        <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*, *, *">
+        <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*, *, *" IsVisible="true" x:Name="gridLogin">
             <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" >
                 <Image x:Name="details" Aspect="AspectFill" HeightRequest="300" />
             </StackLayout>
@@ -18,15 +18,35 @@
                 <Label x:Name="lbl__titulo" Text="Seja Bem Vindo (a)!" FontSize="Title" FontAttributes="Bold" TextColor="#711cb6" />
                 <Label x:Name="lbl__subtitulo" Text="Logue em sua conta" HorizontalTextAlignment="Center" FontSize="Subtitle" TextColor="#000" FontAttributes="Bold" />
             </StackLayout>
-            <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
-                <Frame BackgroundColor="Transparent" BorderColor="#711cb6" Margin="10" Padding="5" HorizontalOptions="FillAndExpand" CornerRadius="10">
+            <StackLayout x:Name="stc__cpf" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
+                <Label Text="Informe seu CPF" Margin="20, 0, 0, 0" />
+                <Frame BackgroundColor="Transparent" BorderColor="#711cb6" Margin="20, 10" Padding="5" HorizontalOptions="FillAndExpand" CornerRadius="10">
                     <StackLayout Orientation="Horizontal">
-                        <Frame BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="10, 0, 0, 0">
+                        <Frame BackgroundColor="#711cb6" HeightRequest="40" WidthRequest="40" CornerRadius="10" Padding="5" Margin="0">
                             <Image x:Name="img__cpf" Aspect="AspectFill" Margin="0" />
                         </Frame>
                         <control:MaskedEntry x:Name="cpf__entry" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="999.999.999-99" Mask="XXX.XXX.XXX-XX" ClearButtonVisibility="WhileEditing" ></control:MaskedEntry>
                     </StackLayout>
                 </Frame>
+            </StackLayout>
+            <StackLayout x:Name="stc__password" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
+                <Label Text="Informe sua senha" Margin="20, 0, 0, 0" />
+                <Frame BackgroundColor="Transparent" BorderColor="#711cb6" Margin="20, 10" Padding="5" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="#711cb6" HeightRequest="40" WidthRequest="40" CornerRadius="10" Padding="5" Margin="0">
+                            <Image x:Name="img__password" Aspect="AspectFill" Margin="0" />
+                        </Frame>
+                        <Entry IsPassword="True" x:Name="password__entry" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="**************" ClearButtonVisibility="WhileEditing" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout x:Name="stc__btn__logar" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical" >
+                <Button x:Name="btn__logar" Text="Entrar" BackgroundColor="#711cb6" TextColor="#fff" Margin="20, 10" CornerRadius="10" Padding="10" />
+                <Label x:Name="lbl__criar__conta" Text="Não possui uma conta? Clique aqui!" HorizontalOptions="Center" VerticalOptions="Start">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="onClickLabelCriarConta" Tapped="onClickLabelCriarConta_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

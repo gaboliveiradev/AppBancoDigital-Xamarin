@@ -5,7 +5,11 @@
     <Application.Resources>
         <ResourceDictionary>
 
-            
+            <Style TargetType="Label" x:Key="lbl__titulo__entry">
+                <Setter Property="Margin" Value="20, -10" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
             
         </ResourceDictionary>
     </Application.Resources>

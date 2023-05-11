@@ -28,6 +28,7 @@
     <None Remove="Assets\logo.png" />
     <None Remove="Assets\logo_back_purple.png" />
     <None Remove="Assets\logo_back_white.png" />
+    <None Remove="Assets\password.png" />
     <None Remove="Assets\wave.svg" />
   </ItemGroup>
 
@@ -46,6 +47,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\logo_back_white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\password.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
