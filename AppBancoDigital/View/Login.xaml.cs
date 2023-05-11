@@ -30,7 +30,7 @@ namespace AppBancoDigital.View
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-            cpf__entry.Background = null;
+            
 
             // Adicionando as imagens
             details.Source = ImageSource.FromResource("AppBancoDigital.Assets.details.png");
