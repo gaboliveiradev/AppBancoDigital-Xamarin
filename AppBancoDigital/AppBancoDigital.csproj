@@ -23,12 +23,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\cpf.png" />
+    <None Remove="Assets\details.png" />
     <None Remove="Assets\logo.png" />
     <None Remove="Assets\logo_back_purple.png" />
     <None Remove="Assets\logo_back_white.png" />
+    <None Remove="Assets\wave.svg" />
   </ItemGroup>
 
   <ItemGroup>
+    <ApplicationDefinition Include="Assets\wave.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\cpf.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\details.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Assets\logo_back_purple.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
