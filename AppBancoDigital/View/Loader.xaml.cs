@@ -32,7 +32,7 @@ namespace AppBancoDigital.View
                 await logo.ScaleTo(1, 200, Easing.CubicIn);
             }
 
-            await Navigation.PushAsync(new Login());
+            await Navigation.PushAsync(new LoginRegister());
         }
     }
 }

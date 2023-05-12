@@ -24,11 +24,13 @@
 
   <ItemGroup>
     <None Remove="Assets\cpf.png" />
+    <None Remove="Assets\data_nascimento.png" />
     <None Remove="Assets\details.png" />
     <None Remove="Assets\logo.png" />
     <None Remove="Assets\logo_back_purple.png" />
     <None Remove="Assets\logo_back_white.png" />
     <None Remove="Assets\password.png" />
+    <None Remove="Assets\user.png" />
     <None Remove="Assets\wave.svg" />
   </ItemGroup>
 
@@ -38,6 +40,9 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\cpf.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\data_nascimento.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\details.png">
@@ -61,10 +66,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\LoginRegister.xaml.cs">
+      <DependentUpon>LoginRegister.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="View\Loader.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Login.xaml">
+    <EmbeddedResource Update="View\LoginRegister.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
