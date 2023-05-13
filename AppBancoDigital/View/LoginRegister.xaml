@@ -10,8 +10,8 @@
         <StackLayout>
             
             <!-- TELA DE LOGAR EM UMA CONTA EXISTENTE -->
-            
-            <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*, *, *" IsVisible="true" x:Name="gridLogin">
+
+            <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*, *, *" IsVisible="true" x:Name="grid__login">
                 <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" >
                     <Image x:Name="details" Aspect="AspectFill" HeightRequest="300" />
                 </StackLayout>
@@ -19,30 +19,30 @@
                     <Image x:Name="logo" WidthRequest="150" HeightRequest="150" />
                 </StackLayout>
                 <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center">
-                    <Label x:Name="lbl__titulo" Text="Seja Bem Vindo (a)!" FontSize="Title" FontAttributes="Bold" TextColor="#711cb6" />
-                    <Label x:Name="lbl__subtitulo" Text="Logue em sua conta" HorizontalTextAlignment="Center" FontSize="Subtitle" TextColor="#000" FontAttributes="Bold" />
+                    <Label x:Name="lbl__titulo__login" Text="Seja Bem Vindo (a)!" FontSize="Title" FontAttributes="Bold" TextColor="#711cb6" />
+                    <Label x:Name="lbl__subtitulo__login" Text="Logue em sua conta" HorizontalTextAlignment="Center" FontSize="Subtitle" TextColor="#000" FontAttributes="Bold" />
                 </StackLayout>
              
-                <StackLayout x:Name="stc__cpf" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
+                <StackLayout x:Name="stc__cpf__login" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
                     <Label Text="Informe seu CPF" Margin="20, 0, 0, 0" />
                     <Frame BackgroundColor="Transparent" BorderColor="#711cb6" Margin="20, 10" Padding="5" HorizontalOptions="FillAndExpand" CornerRadius="10">
                         <StackLayout Orientation="Horizontal">
                             <Frame BackgroundColor="#711cb6" HeightRequest="40" WidthRequest="40" CornerRadius="10" Padding="5" Margin="0">
-                                <Image x:Name="img__cpf" Aspect="AspectFill" Margin="0" />
+                                <Image x:Name="img__cpf__login" Aspect="AspectFill" Margin="0" />
                             </Frame>
-                            <control:MaskedEntry x:Name="cpf__entry" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="999.999.999-99" Mask="XXX.XXX.XXX-XX" ClearButtonVisibility="WhileEditing" ></control:MaskedEntry>
+                            <control:MaskedEntry x:Name="txt__cpf__login" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="999.999.999-99" Mask="XXX.XXX.XXX-XX" ClearButtonVisibility="WhileEditing" ></control:MaskedEntry>
                         </StackLayout>
                     </Frame>
                 </StackLayout>
                 
-                <StackLayout x:Name="stc__password" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
+                <StackLayout x:Name="stc__password__login" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
                     <Label Text="Informe sua senha" Margin="20, 0, 0, 0" />
                     <Frame BackgroundColor="Transparent" BorderColor="#711cb6" Margin="20, 10" Padding="5" HorizontalOptions="FillAndExpand" CornerRadius="10">
                         <StackLayout Orientation="Horizontal">
                             <Frame BackgroundColor="#711cb6" HeightRequest="40" WidthRequest="40" CornerRadius="10" Padding="5" Margin="0">
-                                <Image x:Name="img__password" Aspect="AspectFill" Margin="0" />
+                                <Image x:Name="img__password__login" Aspect="AspectFill" Margin="0" />
                             </Frame>
-                            <Entry IsPassword="True" x:Name="password__entry" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="**************" ClearButtonVisibility="WhileEditing" />
+                            <Entry IsPassword="True" x:Name="txt__password__login" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="**************" ClearButtonVisibility="WhileEditing" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>
@@ -59,11 +59,12 @@
             
             <!-- TELA DE CRIAR CONTA -->
 
-            <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*, *, *" IsVisible="false" x:Name="gridCadastrar" >
+            <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="*, *, *" IsVisible="false" x:Name="grid__register" >
                 <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical" >
                     <Label x:Name="lbl__titulo__register" Text="Seja Bem Vindo (a)!" FontSize="Title" FontAttributes="Bold" TextColor="#711cb6" />
                     <Label x:Name="lbl__subtitulo__register" Text="Crie sua conta gratuitamente." HorizontalTextAlignment="Center" FontSize="Subtitle" TextColor="#000" FontAttributes="Bold" />
                 </StackLayout>
+                
                 <StackLayout x:Name="stc__nome__register" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
                     <Label Text="Informe seu nome" Margin="20, 0, 0, 0" />
                     <Frame BackgroundColor="Transparent" BorderColor="#711cb6" Margin="20, 10" Padding="5" HorizontalOptions="FillAndExpand" CornerRadius="10">
@@ -71,7 +72,7 @@
                             <Frame BackgroundColor="#711cb6" HeightRequest="40" WidthRequest="40" CornerRadius="10" Padding="5" Margin="0">
                                 <Image x:Name="img__nome__register" Aspect="AspectFill" Margin="0" />
                             </Frame>
-                            <Entry x:Name="nome__entry__register" HorizontalOptions="FillAndExpand" Keyboard="Text" Placeholder="Gabriel R. de Oliveira" ClearButtonVisibility="WhileEditing" />
+                            <Entry x:Name="txt__nome__register" HorizontalOptions="FillAndExpand" Keyboard="Text" Placeholder="Gabriel R. de Oliveira" ClearButtonVisibility="WhileEditing" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>
@@ -83,19 +84,19 @@
                             <Frame BackgroundColor="#711cb6" HeightRequest="40" WidthRequest="40" CornerRadius="10" Padding="5" Margin="0">
                                 <Image x:Name="img__cpf__register" Aspect="AspectFill" Margin="0" />
                             </Frame>
-                            <control:MaskedEntry x:Name="cpf__entry__register" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="999.999.999-99" Mask="XXX.XXX.XXX-XX" ClearButtonVisibility="WhileEditing" ></control:MaskedEntry>
+                            <control:MaskedEntry x:Name="txt__cpf__register" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="999.999.999-99" Mask="XXX.XXX.XXX-XX" ClearButtonVisibility="WhileEditing" ></control:MaskedEntry>
                         </StackLayout>
                     </Frame>
                 </StackLayout>
 
-                <StackLayout x:Name="stc__datanascimento__register" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
+                <StackLayout x:Name="stc__data__nascimento__register" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
                     <Label Text="Informe sua data de nascimento" Margin="20, 0, 0, 0" />
                     <Frame BackgroundColor="Transparent" BorderColor="#711cb6" Margin="20, 10" Padding="5" HorizontalOptions="FillAndExpand" CornerRadius="10">
                         <StackLayout Orientation="Horizontal">
                             <Frame BackgroundColor="#711cb6" HeightRequest="40" WidthRequest="40" CornerRadius="10" Padding="5" Margin="0">
-                                <Image x:Name="img__datanascimento__register" Aspect="AspectFill" Margin="0" />
+                                <Image x:Name="img__data__nascimento__register" Aspect="AspectFill" Margin="0" />
                             </Frame>
-                            <DatePicker TextColor="#000" x:Name="datanascimento__dtpck" Format="dd/MM/yyyy" HorizontalOptions="FillAndExpand" />
+                            <DatePicker TextColor="#000" x:Name="dtpck__data__nascimento__register" Format="dd/MM/yyyy" HorizontalOptions="FillAndExpand" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>
@@ -107,7 +108,7 @@
                             <Frame BackgroundColor="#711cb6" HeightRequest="40" WidthRequest="40" CornerRadius="10" Padding="5" Margin="0">
                                 <Image x:Name="img__password__register" Aspect="AspectFill" Margin="0" />
                             </Frame>
-                            <Entry IsPassword="True" x:Name="password__entry__register" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="**************" ClearButtonVisibility="WhileEditing" />
+                            <Entry IsPassword="True" x:Name="txt__password__register" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="**************" ClearButtonVisibility="WhileEditing" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>
@@ -119,7 +120,7 @@
                             <Frame BackgroundColor="#711cb6" HeightRequest="40" WidthRequest="40" CornerRadius="10" Padding="5" Margin="0">
                                 <Image x:Name="img__password__confirmar__register" Aspect="AspectFill" Margin="0" />
                             </Frame>
-                            <Entry IsPassword="True" x:Name="password__confirmar__entry__register" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="**************" ClearButtonVisibility="WhileEditing" />
+                            <Entry IsPassword="True" x:Name="txt__password__confirmar__register" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="**************" ClearButtonVisibility="WhileEditing" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>
