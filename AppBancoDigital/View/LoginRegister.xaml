@@ -21,6 +21,7 @@
                 <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center">
                     <Label x:Name="lbl__titulo__login" Text="Seja Bem Vindo (a)!" FontSize="Title" FontAttributes="Bold" TextColor="#711cb6" />
                     <Label x:Name="lbl__subtitulo__login" Text="Logue em sua conta" HorizontalTextAlignment="Center" FontSize="Subtitle" TextColor="#000" FontAttributes="Bold" />
+                    <ActivityIndicator x:Name="act__loader__login" Color="#711cb6" IsRunning="False" IsVisible="False" />
                 </StackLayout>
              
                 <StackLayout x:Name="stc__cpf__login" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
@@ -63,6 +64,7 @@
                 <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical" >
                     <Label x:Name="lbl__titulo__register" Text="Seja Bem Vindo (a)!" FontSize="Title" FontAttributes="Bold" TextColor="#711cb6" />
                     <Label x:Name="lbl__subtitulo__register" Text="Crie sua conta gratuitamente." HorizontalTextAlignment="Center" FontSize="Subtitle" TextColor="#000" FontAttributes="Bold" />
+                    <ActivityIndicator x:Name="act__loader__register" Color="#711cb6" IsRunning="False" IsVisible="False" />
                 </StackLayout>
                 
                 <StackLayout x:Name="stc__nome__register" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
@@ -126,7 +128,7 @@
                 </StackLayout>
 
                 <StackLayout x:Name="stc__btn__register" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical" >
-                    <Button x:Name="btn__register" Text="CRIAR CONTA" BackgroundColor="#711cb6" TextColor="#fff" Margin="20, 10" CornerRadius="10" Padding="10" />
+                    <Button x:Name="btn__register" Text="CRIAR CONTA" BackgroundColor="#711cb6" TextColor="#fff" Margin="20, 10" CornerRadius="10" Padding="10" Clicked="btn__register_Clicked" />
                     <Label x:Name="lbl__logar" Text="Possui uma conta? Faça login!" HorizontalOptions="Center" VerticalOptions="Start">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer x:Name="onClickLabelLogin" Tapped="onClickLabelLogin_Tapped" />

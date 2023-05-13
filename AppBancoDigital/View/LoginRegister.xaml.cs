@@ -15,10 +15,17 @@ namespace AppBancoDigital.View
     {
         uint time_animation = 800;
 
-        public void onOfLoader(bool s)
+        public void onOfLoader(bool s, string type)
         {
-            //loader.IsVisible = s;
-            //loader.IsRunning = s;
+            if(type == "r")
+            {
+                act__loader__register.IsVisible = s;
+                act__loader__register.IsRunning = s;
+            } else if(type == "l")
+            {
+                act__loader__login.IsVisible = s;
+                act__loader__login.IsRunning = s;
+            }
         }
 
         public void config_initial_app()
@@ -134,6 +141,11 @@ namespace AppBancoDigital.View
         private void onClickLabelLogin_Tapped(object sender, EventArgs e)
         {
             hideRegisterAndShowLogin();
+        }
+
+        private void btn__register_Clicked(object sender, EventArgs e)
+        {
+            onOfLoader(true, "r");
         }
     }
 }
