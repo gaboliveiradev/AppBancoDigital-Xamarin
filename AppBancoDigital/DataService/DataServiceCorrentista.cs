@@ -14,8 +14,8 @@ namespace AppBancoDigital.DataService
             var json_a_enviar = JsonConvert.SerializeObject(c);
             string json = await DataService.PostDataToService(json_a_enviar, "/correntista/cadastrar");
 
-            //if (json == "false")
-              //return null;
+            if (json == "false")
+              return null;
 
             Correntista correntista = JsonConvert.DeserializeObject<Correntista>(json);
 

@@ -1,8 +1,12 @@
-﻿using System;
+﻿using AppBancoDigital.DataService;
+using AppBancoDigital.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -143,9 +147,25 @@ namespace AppBancoDigital.View
             hideRegisterAndShowLogin();
         }
 
-        private void btn__register_Clicked(object sender, EventArgs e)
+        private async void btn__register_Clicked(object sender, EventArgs e)
         {
             onOfLoader(true, "r");
+
+            /*string nome_digitado = txt__nome__register.Text;
+            string cpf_digitado = Regex.Replace(txt__cpf__register.Text, "[^0-9]", "");
+            string senha_sha1;
+            using (var sha1 = new SHA1Managed())
+            {
+                senha_sha1 = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(txt__password__register.Text)));
+                senha_sha1 = string.Join("", senha_sha1.ToLower().Split('-'));
+            }
+
+            Correntista c = await DataServiceCorrentista.Cadastrar(new Correntista
+            {
+                nome = nome_digitado,
+                cpf = cpf_digitado,
+                senha = senha_sha1,
+            });*/
         }
     }
 }
