@@ -147,7 +147,7 @@ namespace AppBancoDigital.View
             hideRegisterAndShowLogin();
         }
 
-        private async void btn__register_Clicked(object sender, EventArgs e)
+        private void btn__register_Clicked(object sender, EventArgs e)
         {
             onOfLoader(true, "r");
 
