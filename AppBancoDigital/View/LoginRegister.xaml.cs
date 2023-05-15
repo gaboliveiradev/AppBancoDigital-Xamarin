@@ -17,7 +17,7 @@ namespace AppBancoDigital.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginRegister : ContentPage
     {
-        uint time_animation = 800;
+        uint time_animation = 200;
 
         public void onOfLoader(bool s, string type)
         {
@@ -57,65 +57,65 @@ namespace AppBancoDigital.View
             stc__btn__logar.TranslateTo(0, 220);
 
             // Ocultando os componentes da tela de register
-            /*lbl__titulo__register.TranslateTo(-300, 0);
+            lbl__titulo__register.TranslateTo(-300, 0);
             lbl__subtitulo__register.TranslateTo(310, 0);
             stc__nome__register.TranslateTo(-375, 0);
             stc__cpf__register.TranslateTo(375, 0);
             stc__data__nascimento__register.TranslateTo(-375, 0);
             stc__password__register.TranslateTo(375, 0);
             stc__password__confirmar__register.TranslateTo(-375, 0);
-            stc__btn__register.TranslateTo(0, 140);*/
-            grid__register.TranslateTo(0, 800);
+            stc__btn__register.TranslateTo(0, 140);
+            //grid__register.TranslateTo(0, 800);
         }
 
         public async void hideRegisterAndShowLogin()
         {
-            /*await lbl__titulo__register.TranslateTo(-300, 0, time_animation, Easing.CubicOut);
+            await lbl__titulo__register.TranslateTo(-300, 0, time_animation, Easing.CubicOut);
             await lbl__subtitulo__register.TranslateTo(310, 0, time_animation, Easing.CubicOut);
             await stc__nome__register.TranslateTo(-375, 0, time_animation, Easing.CubicOut);
             await stc__cpf__register.TranslateTo(375, 0, time_animation, Easing.CubicOut);
             await stc__data__nascimento__register.TranslateTo(-375, 0, time_animation, Easing.CubicOut);
             await stc__password__register.TranslateTo(375, 0, time_animation, Easing.CubicOut);
             await stc__password__confirmar__register.TranslateTo(-375, 0, time_animation, Easing.CubicOut);
-            await stc__btn__register.TranslateTo(0, 140, time_animation, Easing.CubicOut);*/
-            await grid__register.TranslateTo(0, 800, time_animation, Easing.CubicOut);
+            await stc__btn__register.TranslateTo(0, 140, time_animation, Easing.CubicOut);
+            //await grid__register.TranslateTo(0, 800, time_animation, Easing.CubicOut);
 
             grid__register.IsVisible = false;
             grid__login.IsVisible = true;
 
-            /*await details.TranslateTo(0, -60, 2000, Easing.CubicOut);
+            await details.TranslateTo(0, -60, 2000, Easing.CubicOut);
             await logo.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await lbl__titulo__login.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await lbl__subtitulo__login.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await stc__cpf__login.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await stc__password__login.TranslateTo(0, 0, time_animation, Easing.CubicOut);
-            await stc__btn__logar.TranslateTo(0, 0, time_animation, Easing.CubicOut);*/
-            await grid__login.TranslateTo(0, 0, time_animation, Easing.CubicOut);
+            await stc__btn__logar.TranslateTo(0, 0, time_animation, Easing.CubicOut);
+            //await grid__login.TranslateTo(0, 0, time_animation, Easing.CubicOut);
         }
 
         public async void hideLoginAndShowRegister()
         {
-            await grid__login.TranslateTo(0, -800, time_animation, Easing.CubicOut);
-            /*await lbl__titulo__login.TranslateTo(-300, 0, time_animation, Easing.CubicOut);
+            //await grid__login.TranslateTo(0, -800, time_animation, Easing.CubicOut);
+            await lbl__titulo__login.TranslateTo(-300, 0, time_animation, Easing.CubicOut);
             await lbl__subtitulo__login.TranslateTo(270, 0, time_animation, Easing.CubicOut);
             await stc__cpf__login.TranslateTo(-375, 0, time_animation, Easing.CubicOut);
             await stc__password__login.TranslateTo(375, 0, time_animation, Easing.CubicOut);
             await stc__btn__logar.TranslateTo(0, 220, time_animation, Easing.CubicOut);
             await logo.TranslateTo(0, -140, time_animation, Easing.CubicOut);
-            await details.TranslateTo(0, -280, time_animation, Easing.Linear);*/
+            await details.TranslateTo(0, -280, time_animation, Easing.Linear);
 
             grid__login.IsVisible = false;
             grid__register.IsVisible = true;
 
-            /*await lbl__titulo__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
+            await lbl__titulo__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await lbl__subtitulo__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await stc__nome__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await stc__cpf__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await stc__data__nascimento__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await stc__password__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await stc__password__confirmar__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
-            await stc__btn__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);*/
-            await grid__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
+            await stc__btn__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
+            //await grid__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
         }
 
         public LoginRegister()
