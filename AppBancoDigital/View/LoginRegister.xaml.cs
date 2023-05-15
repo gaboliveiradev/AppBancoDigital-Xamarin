@@ -83,7 +83,7 @@ namespace AppBancoDigital.View
             grid__register.IsVisible = false;
             grid__login.IsVisible = true;
 
-            await details.TranslateTo(0, -60, 2000, Easing.CubicOut);
+            await details.TranslateTo(0, -60, 200, Easing.CubicOut);
             await logo.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await lbl__titulo__login.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await lbl__subtitulo__login.TranslateTo(0, 0, time_animation, Easing.CubicOut);
@@ -128,7 +128,7 @@ namespace AppBancoDigital.View
         protected async override void OnAppearing()
         {
             // Efeito de movimentar a nossa img Details para cima.
-            await details.TranslateTo(0, -60, 2000, Easing.Linear);
+            await details.TranslateTo(0, -60, 200, Easing.Linear);
 
             await lbl__titulo__login.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await lbl__subtitulo__login.TranslateTo(0, 0, time_animation, Easing.CubicOut);
@@ -166,6 +166,11 @@ namespace AppBancoDigital.View
                 cpf = cpf_digitado,
                 senha = senha_sha1,
             });*/
+        }
+
+        private async void btn__logar_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Home());
         }
     }
 }

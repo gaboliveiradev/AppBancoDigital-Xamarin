@@ -5,12 +5,16 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Grid RowDefinitions="*, *, *, *, *, * " ColumnDefinitions="*, *, *">
-                <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
+            <Grid RowDefinitions="*, *" ColumnDefinitions="*, *, *">
+                <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
                     <Grid RowDefinitions="*, *" ColumnDefinitions="*, *, *">
-                        <Frame BackgroundColor="#711cb6" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+                        <Frame BackgroundColor="#711cb6" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="120" />
+                        <Frame x:Name="frm_saldo" CornerRadius="10" BackgroundColor="red" Margin="15" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="120" />
                     </Grid>
                 </StackLayout>
+            </Grid>
+            <Grid RowDefinitions="*, *, *, *, *, * " ColumnDefinitions="*, *, *">
+                
             </Grid>
             
         </StackLayout>

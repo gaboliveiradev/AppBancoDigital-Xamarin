@@ -49,7 +49,7 @@
                 </StackLayout>
                 
                 <StackLayout x:Name="stc__btn__logar" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical" >
-                    <Button x:Name="btn__logar" Text="Entrar" BackgroundColor="#711cb6" TextColor="#fff" Margin="20, 10" CornerRadius="10" Padding="10" />
+                    <Button x:Name="btn__logar" Clicked="btn__logar_Clicked" Text="Entrar" BackgroundColor="#711cb6" TextColor="#fff" Margin="20, 10" CornerRadius="10" Padding="10" />
                     <Label x:Name="lbl__criar__conta" Text="Não possui uma conta? Clique aqui!" HorizontalOptions="Center" VerticalOptions="Start">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer x:Name="onClickLabelCriarConta" Tapped="onClickLabelCriarConta_Tapped" />
