@@ -8,8 +8,26 @@
             <Grid RowDefinitions="*, *" ColumnDefinitions="*, *, *">
                 <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
                     <Grid RowDefinitions="*, *" ColumnDefinitions="*, *, *">
-                        <Frame BackgroundColor="#711cb6" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="120" />
-                        <Frame x:Name="frm_saldo" CornerRadius="10" BackgroundColor="red" Margin="15" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="120" />
+                        <Frame BackgroundColor="#711cb6" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="120">
+                            <Label FontAttributes="Bold" FontSize="Medium" Text="Bem vindo(a), Gabriel Oliveira" HorizontalTextAlignment="Center" TextColor="#fff" />
+                        </Frame>
+                        <Frame HasShadow="True" x:Name="frm_saldo" CornerRadius="10" BackgroundColor="White" Margin="15" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest="140">
+                            <Grid RowDefinitions="*, *, *, *, *" ColumnDefinitions="*, *, *, *">
+                                <Label TextColor="#000" FontSize="16" Grid.Row="0" Grid.Column="0" Text="Saldo" FontAttributes="Bold"/>
+                                <Image WidthRequest="10" HeightRequest="10" Grid.Row="1" Grid.Column="0" x:Name="img_ocultado" IsVisible="False" />
+                                <Label x:Name="lbl_saldo" FontSize="18" Text="R$ 1000,00" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" />
+                                <Image WidthRequest="10" HeightRequest="10" Grid.Row="1" Grid.Column="1" x:Name="img_ocultar" IsVisible="True">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer x:Name="onClickOcultarSaldo" Tapped="onClickOcultarSaldo_Tapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image WidthRequest="10" HeightRequest="10" Grid.Row="1" Grid.Column="1" x:Name="img_mostrar" IsVisible="False">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer x:Name="onClickMostrarSaldo" Tapped="onClickMostrarSaldo_Tapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </Frame>
                     </Grid>
                 </StackLayout>
             </Grid>

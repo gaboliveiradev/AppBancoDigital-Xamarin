@@ -29,6 +29,9 @@
     <None Remove="Assets\logo.png" />
     <None Remove="Assets\logo_back_purple.png" />
     <None Remove="Assets\logo_back_white.png" />
+    <None Remove="Assets\ocultado.png" />
+    <None Remove="Assets\ocultar.png" />
+    <None Remove="Assets\olho-aberto.png" />
     <None Remove="Assets\password.png" />
     <None Remove="Assets\user.png" />
     <None Remove="Assets\wave.svg" />
@@ -52,6 +55,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\logo_back_white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\ocultado.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\ocultar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\olho-aberto.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\password.png">

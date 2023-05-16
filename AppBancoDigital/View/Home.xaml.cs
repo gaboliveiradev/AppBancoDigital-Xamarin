@@ -17,6 +17,27 @@ namespace AppBancoDigital.View
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             frm_saldo.TranslateTo(0, 60);
+            img_ocultar.Source = ImageSource.FromResource("AppBancoDigital.Assets.ocultar.png");
+            img_mostrar.Source = ImageSource.FromResource("AppBancoDigital.Assets.olho-aberto.png");
+            img_ocultado.Source = ImageSource.FromResource("AppBancoDigital.Assets.ocultado.png");
+        }
+
+        private void onClickOcultarSaldo_Tapped(object sender, EventArgs e)
+        {
+            img_mostrar.IsVisible = true;
+            img_ocultar.IsVisible = false;
+
+            lbl_saldo.IsVisible = false;
+            img_ocultado.IsVisible = true;
+        }
+
+        private void onClickMostrarSaldo_Tapped(object sender, EventArgs e)
+        {
+            img_mostrar.IsVisible = false;
+            img_ocultar.IsVisible = true;
+
+            lbl_saldo.IsVisible = true;
+            img_ocultado.IsVisible = false;
         }
     }
 }
