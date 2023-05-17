@@ -147,30 +147,87 @@ namespace AppBancoDigital.View
             hideRegisterAndShowLogin();
         }
 
-        private void btn__register_Clicked(object sender, EventArgs e)
+        private async void btn__register_Clicked(object sender, EventArgs e)
         {
-            onOfLoader(true, "r");
-
-            /*string nome_digitado = txt__nome__register.Text;
-            string cpf_digitado = Regex.Replace(txt__cpf__register.Text, "[^0-9]", "");
-            string senha_sha1;
-            using (var sha1 = new SHA1Managed())
+            try
             {
-                senha_sha1 = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(txt__password__register.Text)));
-                senha_sha1 = string.Join("", senha_sha1.ToLower().Split('-'));
+                onOfLoader(true, "r");
+
+                string nome_digitado = txt__nome__register.Text;
+                string cpf_digitado = Regex.Replace(txt__cpf__register.Text, "[^0-9]", "");
+                string data_nascimento = dtpck__data__nascimento__register.Date.ToString("yyyy-MM-dd");
+
+                string senha_sha1;
+                using (var sha1 = new SHA1Managed())
+                {
+                    senha_sha1 = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(txt__password__register.Text)));
+                    senha_sha1 = string.Join("", senha_sha1.ToLower().Split('-'));
+                }
+
+                Correntista c = await DataServiceCorrentista.Cadastrar(new Correntista
+                {
+                    nome = nome_digitado,
+                    cpf = cpf_digitado,
+                    senha = senha_sha1,
+                    data_nascimento = data_nascimento
+                });
+
+                await DisplayAlert("Sucesso!", "Conta criada", "OK");
+
+                hideRegisterAndShowLogin();
             }
-
-            Correntista c = await DataServiceCorrentista.Cadastrar(new Correntista
+            catch (Exception err)
             {
-                nome = nome_digitado,
-                cpf = cpf_digitado,
-                senha = senha_sha1,
-            });*/
+                await DisplayAlert("Ops", err.Message, "OK");
+            } finally
+            {
+                onOfLoader(false, "r");
+            }
         }
 
         private async void btn__logar_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Home());
+            //await Navigation.PushAsync(new Home());
+            try
+            {
+                onOfLoader(true, "l");
+
+                string[] cpf_pontuado = txt__cpf__login.Text.Split('.', '-');
+                string cpf_digitado = cpf_pontuado[0] + cpf_pontuado[1] + cpf_pontuado[2] + cpf_pontuado[3];
+                string senha_digitada = txt__password__login.Text;
+
+                string senha_sha1;
+                using (var sha1 = new SHA1Managed())
+                {
+                    senha_sha1 = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(senha_digitada)));
+                    senha_sha1 = string.Join("", senha_sha1.ToLower().Split('-'));
+                }
+
+                Correntista c = await DataServiceCorrentista.Autenticar(new Correntista
+                {
+                    cpf = cpf_digitado,
+                    senha = senha_sha1
+                });
+
+                if(c != null)
+                {
+                    App.Current.Properties.Add("id_correntista", c.id);
+                    App.Current.MainPage = new NavigationPage(new Home()
+                    {
+                        BindingContext = c
+                    });
+                } else
+                {
+                    await DisplayAlert("Erro", "Dados incorretos!", "OK");
+                }
+            }
+            catch (Exception err)
+            {
+                await DisplayAlert("Ops", err.Message, "OK");
+            } finally
+            {
+                onOfLoader(false, "l");
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppBancoDigital.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace AppBancoDigital.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Home : ContentPage
     {
+        int idCorrentista = (int)Application.Current.Properties["id_correntista"];
+
         public Home()
         {
             InitializeComponent();
