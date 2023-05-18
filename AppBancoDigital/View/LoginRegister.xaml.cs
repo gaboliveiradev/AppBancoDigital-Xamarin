@@ -25,10 +25,13 @@ namespace AppBancoDigital.View
             {
                 act__loader__register.IsVisible = s;
                 act__loader__register.IsRunning = s;
-            } else if(type == "l")
+                btn__register.IsEnabled = !s;
+            }
+            else if(type == "l")
             {
                 act__loader__login.IsVisible = s;
                 act__loader__login.IsRunning = s;
+                btn__logar.IsEnabled = !s;
             }
         }
 
@@ -166,11 +169,11 @@ namespace AppBancoDigital.View
 
                 Correntista c = await DataServiceCorrentista.Cadastrar(new Correntista
                 {
-                    nome = nome_digitado,
+                    nome = nome_digitado.ToUpper(),
                     cpf = cpf_digitado,
                     senha = senha_sha1,
                     data_nascimento = data_nascimento
-                });
+                }, "/correntista/cadastrar");
 
                 await DisplayAlert("Sucesso!", "Conta criada", "OK");
 
@@ -187,7 +190,6 @@ namespace AppBancoDigital.View
 
         private async void btn__logar_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new Home());
             try
             {
                 onOfLoader(true, "l");
@@ -207,16 +209,18 @@ namespace AppBancoDigital.View
                 {
                     cpf = cpf_digitado,
                     senha = senha_sha1
-                });
+                }, "/correntista/entrar");
 
-                if(c != null)
+                if (c != null)
                 {
                     App.Current.Properties.Add("id_correntista", c.id);
+                    App.Current.Properties.Add("nome_correntista", c.nome);
                     App.Current.MainPage = new NavigationPage(new Home()
                     {
-                        BindingContext = c
+                        //BindingContext = c
                     });
-                } else
+                }
+                else
                 {
                     await DisplayAlert("Erro", "Dados incorretos!", "OK");
                 }

@@ -10,10 +10,10 @@ namespace AppBancoDigital.DataService
     public class DataServiceCorrentista : DataService
     {
 
-        public static async Task<Correntista> Autenticar(Correntista c)
+        public static async Task<Correntista> Autenticar(Correntista c, string uri)
         {
             var json_a_enviar = JsonConvert.SerializeObject(c);
-            string json = await DataService.PostDataToService(json_a_enviar, "/correntista/entrar");
+            string json = await DataService.PostDataToService(json_a_enviar, uri);
 
             if (json == "false")
                 return null;
@@ -23,10 +23,10 @@ namespace AppBancoDigital.DataService
             return correntista;
         }
 
-        public static async Task<Correntista> Cadastrar(Correntista c)
+        public static async Task<Correntista> Cadastrar(Correntista c, string uri)
         {
             var json_a_enviar = JsonConvert.SerializeObject(c);
-            string json = await DataService.PostDataToService(json_a_enviar, "/correntista/cadastrar");
+            string json = await DataService.PostDataToService(json_a_enviar, uri);
 
             if (json == "false")
               return null;

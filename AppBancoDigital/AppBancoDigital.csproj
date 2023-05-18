@@ -23,9 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\cobrar.png" />
     <None Remove="Assets\cpf.png" />
     <None Remove="Assets\data_nascimento.png" />
     <None Remove="Assets\details.png" />
+    <None Remove="Assets\limite.png" />
     <None Remove="Assets\logo.png" />
     <None Remove="Assets\logo_back_purple.png" />
     <None Remove="Assets\logo_back_white.png" />
@@ -33,6 +35,8 @@
     <None Remove="Assets\ocultar.png" />
     <None Remove="Assets\olho-aberto.png" />
     <None Remove="Assets\password.png" />
+    <None Remove="Assets\pix.png" />
+    <None Remove="Assets\transferir.png" />
     <None Remove="Assets\user.png" />
     <None Remove="Assets\wave.svg" />
   </ItemGroup>
@@ -42,6 +46,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\cobrar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Assets\cpf.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -49,6 +56,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\details.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\limite.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\logo_back_purple.png">
@@ -67,6 +77,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\password.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\pix.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\transferir.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
