@@ -18,7 +18,7 @@ namespace AppBancoDigital.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState); 
+            Rg.Plugins.Popup.Popup.Init(this);
             LoadApplication(new App());
 
             Window.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
