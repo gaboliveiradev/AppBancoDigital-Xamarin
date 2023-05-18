@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<rg:PopupPage xmlns:rg="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms"
+<pages:PopupPage xmlns:pages="http://rotorgames.com" 
+              xmlns="http://xamarin.com/schemas/2014/forms"
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               x:Class="AppBancoDigital.View.Popup.DadosIncorretos">
 
@@ -10,13 +11,13 @@
         </Grid.RowDefinitions>
         <Frame Grid.RowSpan="2" HeightRequest="225" VerticalOptions="End" CornerRadius="30" Padding="20, 0" BackgroundColor="White">
             <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <Image Source="cross.png" x:Name="img" HorizontalOptions="Center" VerticalOptions="Start" Aspect="Fill" HeightRequest="80" WidthRequest="80" Margin="0, -40, 0, 0"></Image>
-                    <StackLayout Orientation="Vertical" Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Label Text="Dados Incorretos!" FontSize="20" FontAttributes="Bold" TextColor="#e10555" HorizontalTextAlignment="Center" />
-                    <Label TextColor="#363636" FontSize="15" Text="CPF e/ou senha incorretos. Seus dados de conexão não estão corretos!" />
+                <!--<Image x:Name="img" HorizontalOptions="Center" VerticalOptions="Start" Aspect="Fill" HeightRequest="80" WidthRequest="80" Margin="0, -40, 0, 0"></Image>-->
+                <StackLayout Orientation="Vertical" Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="Dados Incorretos!" FontSize="20" FontAttributes="Bold" TextColor="#711cb6" HorizontalTextAlignment="Center" />
+                    <Label TextColor="#363636" FontSize="15" Text="Desculpe, mas os dados inseridos para CPF e senha estão incorretos. Por favor, verifique as informações fornecidas e tente efetuar o login novamente." />
                 </StackLayout>
             </Grid>
         </Frame>
-        <Button Grid.Row="1" Text="FECHAR" TextColor="White" HeightRequest="45" Background="#E10555" Clicked="Button_Clicked" />
+        <Button Grid.Row="1" Text="FECHAR" TextColor="White" HeightRequest="45" Background="#711cb6" Clicked="Button_Clicked" />
     </Grid>
-</rg:PopupPage>
+</pages:PopupPage>

@@ -1,5 +1,7 @@
 ﻿using AppBancoDigital.DataService;
 using AppBancoDigital.Model;
+using AppBancoDigital.View.Popup;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -222,7 +224,8 @@ namespace AppBancoDigital.View
                 }
                 else
                 {
-                    await DisplayAlert("Erro", "Dados incorretos!", "OK");
+                    DadosIncorretos pop_dados_incorretos = new Popup.DadosIncorretos();
+                    await Navigation.PushPopupAsync(pop_dados_incorretos, true);
                 }
             }
             catch (Exception err)

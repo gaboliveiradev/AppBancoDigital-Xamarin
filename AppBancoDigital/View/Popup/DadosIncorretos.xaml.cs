@@ -1,4 +1,5 @@
-﻿using Rg.Plugins.Popup.Pages;
+﻿using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace AppBancoDigital.View.Popup
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-
+            App.Current.MainPage.Navigation.PopPopupAsync(true);
         }
     }
 }
