@@ -166,15 +166,17 @@ namespace AppBancoDigital.View
             {
                 onOfLoader(true, "r");
 
-                if(txt__password__register != txt__password__confirmar__register)
+                if (txt__password__register.Text != txt__password__confirmar__register.Text)
                 {
                     SenhaConfirmarSenha pop_senha_confirmar_senha = new Popup.SenhaConfirmarSenha();
                     await Navigation.PushPopupAsync(pop_senha_confirmar_senha, true);
-                } else
+                }
+                else
                 {
                     string nome_digitado = txt__nome__register.Text;
                     string cpf_digitado = Regex.Replace(txt__cpf__register.Text, "[^0-9]", "");
                     string data_nascimento = dtpck__data__nascimento__register.Date.ToString("yyyy-MM-dd");
+                    string tipo = pck__tipo__conta__register.SelectedItem.ToString().ToUpper();
 
                     string senha_sha1;
                     using (var sha1 = new SHA1Managed())
@@ -188,7 +190,8 @@ namespace AppBancoDigital.View
                         nome = nome_digitado.ToUpper(),
                         cpf = cpf_digitado,
                         senha = senha_sha1,
-                        data_nascimento = data_nascimento
+                        data_nascimento = data_nascimento,
+                        tipo = tipo
                     }, "/correntista/cadastrar");
 
                     CorrentistaCadastrado pop_correntista_cadastrado = new Popup.CorrentistaCadastrado();

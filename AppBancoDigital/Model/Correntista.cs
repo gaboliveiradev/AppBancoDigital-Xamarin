@@ -11,5 +11,9 @@ namespace AppBancoDigital.Model
         public string cpf { get; set; }
         public string senha { get; set; }
         public string data_nascimento { get; set; }
+
+
+        // Referente a Model Conta
+        public string tipo { get; set; }
     }
 }

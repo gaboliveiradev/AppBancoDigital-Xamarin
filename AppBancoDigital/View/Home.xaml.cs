@@ -40,11 +40,16 @@ namespace AppBancoDigital.View
                 id_correntista = idCorrentista,
             }, "/conta/dados");
 
-            if(c != null)
+            if (c != null)
             {
                 lbl_saldo.Text = c.saldo.ToString("C", new CultureInfo("pt-BR"));
                 lbl_limite.Text = c.limite.ToString("C", new CultureInfo("pt-BR"));
                 lbl_nome.Text = $"Bem Vindo(a), {nomeCorrentista}.";
+
+                if(c.tipo == "POUPANÇA")
+                {
+                    lbl_limite.IsVisible = false;
+                }
             }
             else
             {
