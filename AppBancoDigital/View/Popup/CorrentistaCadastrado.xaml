@@ -2,7 +2,7 @@
 <pages:PopupPage xmlns:pages="http://rotorgames.com" 
                  xmlns="http://xamarin.com/schemas/2014/forms"
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                 x:Class="AppBancoDigital.View.Popup.DadosIncorretos">
+                 x:Class="AppBancoDigital.View.Popup.CorrentistaCadastrado">
 
     <Grid HeightRequest="265" VerticalOptions="End">
         <Grid.RowDefinitions>
@@ -13,8 +13,8 @@
             <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <!--<Image x:Name="img" HorizontalOptions="Center" VerticalOptions="Start" Aspect="Fill" HeightRequest="80" WidthRequest="80" Margin="0, -40, 0, 0"></Image>-->
                 <StackLayout Orientation="Vertical" Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Label Text="Dados Incorretos!" FontSize="20" FontAttributes="Bold" TextColor="#711cb6" HorizontalTextAlignment="Center" />
-                    <Label TextColor="#363636" FontSize="15" Text="Desculpe, mas os dados inseridos para CPF e senha estão incorretos. Por favor, verifique as informações fornecidas e tente efetuar o login novamente." />
+                    <Label Text="Conta Criada!" FontSize="20" FontAttributes="Bold" TextColor="#711cb6" HorizontalTextAlignment="Center" />
+                    <Label TextColor="#363636" FontSize="15" Text="Parabéns pela abertura da sua conta no ebank! Seu caminho para a praticidade financeira está apenas começando." />
                 </StackLayout>
             </Grid>
         </Frame>

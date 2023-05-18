@@ -177,7 +177,8 @@ namespace AppBancoDigital.View
                     data_nascimento = data_nascimento
                 }, "/correntista/cadastrar");
 
-                await DisplayAlert("Sucesso!", "Conta criada", "OK");
+                CorrentistaCadastrado pop_correntista_cadastrado = new Popup.CorrentistaCadastrado();
+                await Navigation.PushPopupAsync(pop_correntista_cadastrado, true);
 
                 hideRegisterAndShowLogin();
             }
