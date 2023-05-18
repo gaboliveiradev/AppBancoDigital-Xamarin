@@ -46,12 +46,14 @@ namespace AppBancoDigital.View
             img__cpf__login.Source = ImageSource.FromResource("AppBancoDigital.Assets.cpf.png");
             img__cpf__register.Source = ImageSource.FromResource("AppBancoDigital.Assets.cpf.png");
 
-            img__password__login.Source = ImageSource.FromResource("AppBancoDigital.Assets.password.png");
-            img__password__register.Source = ImageSource.FromResource("AppBancoDigital.Assets.password.png");
-            img__password__confirmar__register.Source = ImageSource.FromResource("AppBancoDigital.Assets.password.png");
+            img__password__login.Source = ImageSource.FromResource("AppBancoDigital.Assets.senha.png");
+            img__password__register.Source = ImageSource.FromResource("AppBancoDigital.Assets.senha.png");
+            img__password__confirmar__register.Source = ImageSource.FromResource("AppBancoDigital.Assets.senha.png");
 
-            img__nome__register.Source = ImageSource.FromResource("AppBancoDigital.Assets.user.png");
-            img__data__nascimento__register.Source = ImageSource.FromResource("AppBancoDigital.Assets.data_nascimento.png");
+            img__nome__register.Source = ImageSource.FromResource("AppBancoDigital.Assets.nome.png");
+            img__data__nascimento__register.Source = ImageSource.FromResource("AppBancoDigital.Assets.data.png");
+
+            img__tipo__conta__register.Source = ImageSource.FromResource("AppBancoDigital.Assets.tipo.png");
 
             // Ocultando os componentes da tela de login
             logo.TranslateTo(0, 20);
@@ -69,8 +71,12 @@ namespace AppBancoDigital.View
             stc__data__nascimento__register.TranslateTo(-375, 0);
             stc__password__register.TranslateTo(375, 0);
             stc__password__confirmar__register.TranslateTo(-375, 0);
+            stc__tipo__conta__register.TranslateTo(-375, 0);
             stc__btn__register.TranslateTo(0, 140);
             //grid__register.TranslateTo(0, 800);
+
+            //Adicionando itens no Picker para o register
+            pck__tipo__conta__register.ItemsSource = new List<string> { "Corrente", "Poupança" };
         }
 
         public async void hideRegisterAndShowLogin()
@@ -82,6 +88,7 @@ namespace AppBancoDigital.View
             await stc__data__nascimento__register.TranslateTo(-375, 0, time_animation, Easing.CubicOut);
             await stc__password__register.TranslateTo(375, 0, time_animation, Easing.CubicOut);
             await stc__password__confirmar__register.TranslateTo(-375, 0, time_animation, Easing.CubicOut);
+            await stc__tipo__conta__register.TranslateTo(-375, 0, time_animation, Easing.CubicOut);
             await stc__btn__register.TranslateTo(0, 140, time_animation, Easing.CubicOut);
             //await grid__register.TranslateTo(0, 800, time_animation, Easing.CubicOut);
 
@@ -119,6 +126,7 @@ namespace AppBancoDigital.View
             await stc__data__nascimento__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await stc__password__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await stc__password__confirmar__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
+            await stc__tipo__conta__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             await stc__btn__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
             //await grid__register.TranslateTo(0, 0, time_animation, Easing.CubicOut);
         }
@@ -158,34 +166,45 @@ namespace AppBancoDigital.View
             {
                 onOfLoader(true, "r");
 
-                string nome_digitado = txt__nome__register.Text;
-                string cpf_digitado = Regex.Replace(txt__cpf__register.Text, "[^0-9]", "");
-                string data_nascimento = dtpck__data__nascimento__register.Date.ToString("yyyy-MM-dd");
-
-                string senha_sha1;
-                using (var sha1 = new SHA1Managed())
+                if(txt__password__register != txt__password__confirmar__register)
                 {
-                    senha_sha1 = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(txt__password__register.Text)));
-                    senha_sha1 = string.Join("", senha_sha1.ToLower().Split('-'));
+                    SenhaConfirmarSenha pop_senha_confirmar_senha = new Popup.SenhaConfirmarSenha();
+                    await Navigation.PushPopupAsync(pop_senha_confirmar_senha, true);
+                } else
+                {
+                    string nome_digitado = txt__nome__register.Text;
+                    string cpf_digitado = Regex.Replace(txt__cpf__register.Text, "[^0-9]", "");
+                    string data_nascimento = dtpck__data__nascimento__register.Date.ToString("yyyy-MM-dd");
+
+                    string senha_sha1;
+                    using (var sha1 = new SHA1Managed())
+                    {
+                        senha_sha1 = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(txt__password__register.Text)));
+                        senha_sha1 = string.Join("", senha_sha1.ToLower().Split('-'));
+                    }
+
+                    Correntista c = await DataServiceCorrentista.Cadastrar(new Correntista
+                    {
+                        nome = nome_digitado.ToUpper(),
+                        cpf = cpf_digitado,
+                        senha = senha_sha1,
+                        data_nascimento = data_nascimento
+                    }, "/correntista/cadastrar");
+
+                    CorrentistaCadastrado pop_correntista_cadastrado = new Popup.CorrentistaCadastrado();
+                    await Navigation.PushPopupAsync(pop_correntista_cadastrado, true);
+
+                    hideRegisterAndShowLogin();
                 }
-
-                Correntista c = await DataServiceCorrentista.Cadastrar(new Correntista
-                {
-                    nome = nome_digitado.ToUpper(),
-                    cpf = cpf_digitado,
-                    senha = senha_sha1,
-                    data_nascimento = data_nascimento
-                }, "/correntista/cadastrar");
-
-                CorrentistaCadastrado pop_correntista_cadastrado = new Popup.CorrentistaCadastrado();
-                await Navigation.PushPopupAsync(pop_correntista_cadastrado, true);
-
-                hideRegisterAndShowLogin();
             }
             catch (Exception err)
             {
-                await DisplayAlert("Ops", err.Message, "OK");
-            } finally
+                ErroCadastrarCorrentistas pop_erro_cadastrar_correntista = new Popup.ErroCadastrarCorrentistas();
+                await Navigation.PushPopupAsync(pop_erro_cadastrar_correntista, true);
+
+                Console.WriteLine($"Erro: {err.Message}");
+            }
+            finally
             {
                 onOfLoader(false, "r");
             }
@@ -231,8 +250,12 @@ namespace AppBancoDigital.View
             }
             catch (Exception err)
             {
-                await DisplayAlert("Ops", err.Message, "OK");
-            } finally
+                ErroLogar pop_erro_logar = new Popup.ErroLogar();
+                await Navigation.PushPopupAsync(pop_erro_logar, true);
+
+                Console.WriteLine($"Erro: {err.Message}");
+            }
+            finally
             {
                 onOfLoader(false, "l");
             }

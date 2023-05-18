@@ -21,6 +21,7 @@ namespace AppBancoDigital.Droid.Custom_Renderer
         {
         }
 
+        // Metodo que oculta a barra de um entry
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);

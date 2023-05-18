@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages="http://rotorgames.com" 
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="AppBancoDigital.View.Popup.SenhaConfirmarSenha">
+
+    <Grid HeightRequest="265" VerticalOptions="End">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Frame Grid.RowSpan="2" HeightRequest="225" VerticalOptions="End" CornerRadius="30" Padding="20, 0" BackgroundColor="White">
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <!--<Image x:Name="img" HorizontalOptions="Center" VerticalOptions="Start" Aspect="Fill" HeightRequest="80" WidthRequest="80" Margin="0, -40, 0, 0"></Image>-->
+                <StackLayout Orientation="Vertical" Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="Senhas NÃO Coincidem!" FontSize="20" FontAttributes="Bold" TextColor="#711cb6" HorizontalTextAlignment="Center" />
+                    <Label TextColor="#363636" FontSize="15" Text="A senha inserida não corresponde à confirmação da senha. Por favor, verifique e insira novamente as senhas, garantindo que sejam iguais." />
+                </StackLayout>
+            </Grid>
+        </Frame>
+        <Button Grid.Row="1" Text="FECHAR" TextColor="White" HeightRequest="45" Background="#711cb6" Clicked="Button_Clicked"/>
+    </Grid>
+</pages:PopupPage>
