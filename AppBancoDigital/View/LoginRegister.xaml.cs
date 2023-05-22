@@ -217,38 +217,44 @@ namespace AppBancoDigital.View
         {
             try
             {
-                onOfLoader(true, "l");
-
-                string[] cpf_pontuado = txt__cpf__login.Text.Split('.', '-');
-                string cpf_digitado = cpf_pontuado[0] + cpf_pontuado[1] + cpf_pontuado[2] + cpf_pontuado[3];
-                string senha_digitada = txt__password__login.Text;
-
-                string senha_sha1;
-                using (var sha1 = new SHA1Managed())
+                if (string.IsNullOrEmpty(txt__cpf__login.Text) || string.IsNullOrEmpty(txt__password__login.Text))
                 {
-                    senha_sha1 = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(senha_digitada)));
-                    senha_sha1 = string.Join("", senha_sha1.ToLower().Split('-'));
-                }
-
-                Correntista c = await DataServiceCorrentista.Autenticar(new Correntista
+                    await DisplayAlert("vazio", "vazio", "ok");
+                } else
                 {
-                    cpf = cpf_digitado,
-                    senha = senha_sha1
-                }, "/correntista/entrar");
+                    onOfLoader(true, "l");
 
-                if (c != null)
-                {
-                    App.Current.Properties.Add("id_correntista", c.id);
-                    App.Current.Properties.Add("nome_correntista", c.nome);
-                    App.Current.MainPage = new NavigationPage(new Home()
+                    string[] cpf_pontuado = txt__cpf__login.Text.Split('.', '-');
+                    string cpf_digitado = cpf_pontuado[0] + cpf_pontuado[1] + cpf_pontuado[2] + cpf_pontuado[3];
+                    string senha_digitada = txt__password__login.Text;
+
+                    string senha_sha1;
+                    using (var sha1 = new SHA1Managed())
                     {
-                        //BindingContext = c
-                    });
-                }
-                else
-                {
-                    DadosIncorretos pop_dados_incorretos = new Popup.DadosIncorretos();
-                    await Navigation.PushPopupAsync(pop_dados_incorretos, true);
+                        senha_sha1 = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(senha_digitada)));
+                        senha_sha1 = string.Join("", senha_sha1.ToLower().Split('-'));
+                    }
+
+                    Correntista c = await DataServiceCorrentista.Autenticar(new Correntista
+                    {
+                        cpf = cpf_digitado,
+                        senha = senha_sha1
+                    }, "/correntista/entrar");
+
+                    if (c != null)
+                    {
+                        App.Current.Properties.Add("id_correntista", c.id);
+                        App.Current.Properties.Add("nome_correntista", c.nome);
+                        App.Current.MainPage = new NavigationPage(new Home()
+                        {
+                            //BindingContext = c
+                        });
+                    }
+                    else
+                    {
+                        DadosIncorretos pop_dados_incorretos = new Popup.DadosIncorretos();
+                        await Navigation.PushPopupAsync(pop_dados_incorretos, true);
+                    }
                 }
             }
             catch (Exception err)
