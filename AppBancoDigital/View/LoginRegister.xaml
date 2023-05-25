@@ -139,9 +139,9 @@
                     </Frame>
                 </StackLayout>
 
-                <StackLayout x:Name="stc__btn__register" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical" >
+                <StackLayout x:Name="stc__btn__register" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
                     <Button x:Name="btn__register" Text="CRIAR CONTA" BackgroundColor="#711cb6" TextColor="#fff" Margin="20, 10" CornerRadius="10" Padding="10" Clicked="btn__register_Clicked" />
-                    <Label x:Name="lbl__logar" Text="Possui uma conta? Faça login!" HorizontalOptions="Center" VerticalOptions="Start">
+                    <Label x:Name="lbl__logar" Text="Possui uma conta? Faça login!" HorizontalOptions="Center" VerticalOptions="Start" Padding="-4">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer x:Name="onClickLabelLogin" Tapped="onClickLabelLogin_Tapped" />
                         </Label.GestureRecognizers>

@@ -164,40 +164,47 @@ namespace AppBancoDigital.View
         {
             try
             {
-                onOfLoader(true, "r");
-
-                if (txt__password__register.Text != txt__password__confirmar__register.Text)
+                if (string.IsNullOrEmpty(txt__cpf__login.Text) || string.IsNullOrEmpty(txt__password__login.Text))
                 {
-                    SenhaConfirmarSenha pop_senha_confirmar_senha = new Popup.SenhaConfirmarSenha();
-                    await Navigation.PushPopupAsync(pop_senha_confirmar_senha, true);
-                }
-                else
+                    CamposVazio pop_campos_vazio = new Popup.CamposVazio();
+                    await Navigation.PushPopupAsync(pop_campos_vazio, true);
+                } else
                 {
-                    string nome_digitado = txt__nome__register.Text;
-                    string cpf_digitado = Regex.Replace(txt__cpf__register.Text, "[^0-9]", "");
-                    string data_nascimento = dtpck__data__nascimento__register.Date.ToString("yyyy-MM-dd");
-                    string tipo = pck__tipo__conta__register.SelectedItem.ToString().ToUpper();
+                    onOfLoader(true, "r");
 
-                    string senha_sha1;
-                    using (var sha1 = new SHA1Managed())
+                    if (txt__password__register.Text != txt__password__confirmar__register.Text)
                     {
-                        senha_sha1 = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(txt__password__register.Text)));
-                        senha_sha1 = string.Join("", senha_sha1.ToLower().Split('-'));
+                        SenhaConfirmarSenha pop_senha_confirmar_senha = new Popup.SenhaConfirmarSenha();
+                        await Navigation.PushPopupAsync(pop_senha_confirmar_senha, true);
                     }
-
-                    Correntista c = await DataServiceCorrentista.Cadastrar(new Correntista
+                    else
                     {
-                        nome = nome_digitado.ToUpper(),
-                        cpf = cpf_digitado,
-                        senha = senha_sha1,
-                        data_nascimento = data_nascimento,
-                        tipo = tipo
-                    }, "/correntista/cadastrar");
+                        string nome_digitado = txt__nome__register.Text;
+                        string cpf_digitado = Regex.Replace(txt__cpf__register.Text, "[^0-9]", "");
+                        string data_nascimento = dtpck__data__nascimento__register.Date.ToString("yyyy-MM-dd");
+                        string tipo = pck__tipo__conta__register.SelectedItem.ToString().ToUpper();
 
-                    CorrentistaCadastrado pop_correntista_cadastrado = new Popup.CorrentistaCadastrado();
-                    await Navigation.PushPopupAsync(pop_correntista_cadastrado, true);
+                        string senha_sha1;
+                        using (var sha1 = new SHA1Managed())
+                        {
+                            senha_sha1 = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(txt__password__register.Text)));
+                            senha_sha1 = string.Join("", senha_sha1.ToLower().Split('-'));
+                        }
 
-                    hideRegisterAndShowLogin();
+                        Correntista c = await DataServiceCorrentista.Cadastrar(new Correntista
+                        {
+                            nome = nome_digitado.ToUpper(),
+                            cpf = cpf_digitado,
+                            senha = senha_sha1,
+                            data_nascimento = data_nascimento,
+                            tipo = tipo
+                        }, "/correntista/cadastrar");
+
+                        CorrentistaCadastrado pop_correntista_cadastrado = new Popup.CorrentistaCadastrado();
+                        await Navigation.PushPopupAsync(pop_correntista_cadastrado, true);
+
+                        hideRegisterAndShowLogin();
+                    }
                 }
             }
             catch (Exception err)
@@ -219,8 +226,10 @@ namespace AppBancoDigital.View
             {
                 if (string.IsNullOrEmpty(txt__cpf__login.Text) || string.IsNullOrEmpty(txt__password__login.Text))
                 {
-                    await DisplayAlert("vazio", "vazio", "ok");
-                } else
+                    CamposVazio pop_campos_vazio = new Popup.CamposVazio();
+                    await Navigation.PushPopupAsync(pop_campos_vazio, true);
+                }
+                else
                 {
                     onOfLoader(true, "l");
 
