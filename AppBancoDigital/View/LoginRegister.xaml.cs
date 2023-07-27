@@ -164,7 +164,7 @@ namespace AppBancoDigital.View
         {
             try
             {
-                if (string.IsNullOrEmpty(txt__cpf__login.Text) || string.IsNullOrEmpty(txt__password__login.Text))
+                if (string.IsNullOrEmpty(txt__nome__register.Text) || string.IsNullOrEmpty(txt__cpf__register.Text) || string.IsNullOrEmpty(txt__password__register.Text) || string.IsNullOrEmpty(txt__password__confirmar__register.Text))
                 {
                     CamposVazio pop_campos_vazio = new Popup.CamposVazio();
                     await Navigation.PushPopupAsync(pop_campos_vazio, true);

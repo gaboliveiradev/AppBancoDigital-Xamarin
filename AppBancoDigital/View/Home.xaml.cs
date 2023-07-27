@@ -29,7 +29,6 @@ namespace AppBancoDigital.View
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            frm_saldo.TranslateTo(0, 60);
             config_initial_imagens();
         }
 
