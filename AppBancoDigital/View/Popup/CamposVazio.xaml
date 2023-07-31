@@ -11,7 +11,7 @@
         </Grid.RowDefinitions>
         <Frame Grid.RowSpan="2" HeightRequest="225" VerticalOptions="End" CornerRadius="30" Padding="20, 0" BackgroundColor="White">
             <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <!--<Image x:Name="img" HorizontalOptions="Center" VerticalOptions="Start" Aspect="Fill" HeightRequest="80" WidthRequest="80" Margin="0, -40, 0, 0"></Image>-->
+                <Image Source="cross.png"></Image>
                 <StackLayout Orientation="Vertical" Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
                     <Label Text="Campos Vazios!" FontSize="20" FontAttributes="Bold" TextColor="#711cb6" HorizontalTextAlignment="Center" />
                     <Label TextColor="#363636" FontSize="15" Text="Porfavor, preencha todos os campos corretamentes antes de continuar." />

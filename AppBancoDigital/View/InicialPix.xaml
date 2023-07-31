@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancoDigital.View.InicialPix">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Header + Title Área Pix -->
+            <StackLayout>
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *">
+                    <Label Text="X" Grid.Row="0" Grid.Column="0" Padding="15,0,0,15" />
+                    <Label HorizontalOptions="End" Text="?" Grid.Row="0" Grid.Column="1" Padding="15,15,0,0" />
+                    <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Label Text="Área Pix" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" Padding="0,0,15,15" FontSize="28" TextColor="#000"/>
+                        <Label Text="Envie e receba pagamento a qualquer hora e dia da semana, sem pagar nada por isso." Padding="0,0,0,15"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            
+            <!-- Enviar -->
+            <StackLayout>
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, *, *">
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="Enviar" FontSize="22" TextColor="#000" Padding="0,0,0,15" FontAttributes="Bold" />
+                    <!-- Tranferir -->
+                    <Image VerticalOptions="End" HorizontalOptions="Center" WidthRequest="30" HeightRequest="40" x:Name="img_transferir" Grid.Row="2" Grid.Column="0" Grid.RowSpan="2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="onClickPageTransferir" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Transferir" HorizontalOptions="Center" Grid.Row="4"  Grid.Column="0" />
+
+                    <!-- Programar -->
+                    <Image VerticalOptions="End" HorizontalOptions="Center" WidthRequest="30" HeightRequest="40" x:Name="img_programar" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="onClickPageProgramar" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Programar" HorizontalOptions="Center" Grid.Row="4" Grid.Column="1" />
+
+                    <!-- Copia e Cola -->
+                    <Image VerticalOptions="End" HorizontalOptions="Center" WidthRequest="30" HeightRequest="40" x:Name="img_copia_cola" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="onClickPixCopiaCola" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Copia e Cola" HorizontalOptions="Center" Grid.Row="4" Grid.Column="2" />
+
+                    <!-- Ler QR Code -->
+                    <Image VerticalOptions="End" HorizontalOptions="Center" WidthRequest="30" HeightRequest="40" x:Name="img_qr_code" Grid.Row="2" Grid.Column="3" Grid.RowSpan="2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="onClickLerQrCode" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="QR Code" HorizontalOptions="Center" Grid.Row="4" Grid.Column="3" />
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

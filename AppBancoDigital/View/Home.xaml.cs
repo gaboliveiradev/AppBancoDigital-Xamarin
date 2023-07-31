@@ -73,9 +73,9 @@ namespace AppBancoDigital.View
             img_ocultado_limite.IsVisible = false;
         }
 
-        private void onClickAreaPix_Tapped(object sender, EventArgs e)
+        private async void onClickAreaPix_Tapped(object sender, EventArgs e)
         {
-            DisplayAlert("Area Pix", "", "OK");
+            await Navigation.PushAsync(new InicialPix());
         }
 
         private void onClickTransferir_Tapped(object sender, EventArgs e)
