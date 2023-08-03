@@ -7,19 +7,19 @@
             <!-- Header + Title Área Pix -->
             <StackLayout>
                 <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *">
-                    <Label Text="X" Grid.Row="0" Grid.Column="0" Padding="15,0,0,15" />
-                    <Label HorizontalOptions="End" Text="?" Grid.Row="0" Grid.Column="1" Padding="15,15,0,0" />
+                    <Label Text="X" Grid.Row="0" Grid.Column="0" Padding="15,15,0,0" />
+                    <Label HorizontalOptions="End" Text="?" Grid.Row="0" Grid.Column="1" Padding="0,15,15,0" />
                     <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-                        <Label Text="Área Pix" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" Padding="0,0,15,15" FontSize="28" TextColor="#000"/>
-                        <Label Text="Envie e receba pagamento a qualquer hora e dia da semana, sem pagar nada por isso." Padding="0,0,0,15"/>
+                        <Label Text="Área Pix" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" Padding="15,15, 0, 15" FontSize="28" TextColor="#000"/>
+                        <Label Text="Envie e receba pagamento a qualquer hora e dia da semana, sem pagar nada por isso." Padding="15,0,0,15"/>
                     </StackLayout>
                 </Grid>
             </StackLayout>
             
             <!-- Enviar -->
-            <StackLayout>
+            <StackLayout Padding="0,0,0,15">
                 <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, *, *">
-                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="Enviar" FontSize="22" TextColor="#000" Padding="0,0,0,15" FontAttributes="Bold" />
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="Enviar" FontSize="22" TextColor="#000" Padding="15,0,0,15" FontAttributes="Bold" />
                     <!-- Tranferir -->
                     <Image VerticalOptions="End" HorizontalOptions="Center" WidthRequest="30" HeightRequest="40" x:Name="img_transferir" Grid.Row="2" Grid.Column="0" Grid.RowSpan="2">
                         <Image.GestureRecognizers>
@@ -52,6 +52,35 @@
                     </Image>
                     <Label Text="QR Code" HorizontalOptions="Center" Grid.Row="4" Grid.Column="3" />
                 </Grid>
+            </StackLayout>
+            
+            <!-- Receber -->
+            <StackLayout>
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, *, *">
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="Receber" FontSize="22" TextColor="#000" Padding="15,0,0,15" FontAttributes="Bold" />
+                    
+                    <!-- Cobrar -->
+                    <Image VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="30" HeightRequest="40" x:Name="img_cobrar" Grid.Row="1" Grid.Column="1">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="onClickCobrar" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Cobrar" HorizontalOptions="Center" Grid.Row="2" Grid.Column="1" />
+
+                    <!-- Depositar -->
+                    <Image VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="30" HeightRequest="40" x:Name="img_depositar" Grid.Row="1" Grid.Column="2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="onClickDepositar" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Depositar" HorizontalOptions="Center" Grid.Row="2" Grid.Column="2" />
+                </Grid>
+            </StackLayout>
+            
+            <!-- Registrar ou trazer chaves pix -->
+            <StackLayout>
+                <Label Text="Registrar ou trazer chaves" TextColor="#000" FontAttributes="Bold" FontSize="16" Padding="15,30,0,0"/>
+                <Label Text="Registre uma nova chave ou faça uma portabilidade para o Nubank" Padding="15,0,0,0" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

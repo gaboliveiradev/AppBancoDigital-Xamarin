@@ -21,6 +21,9 @@ namespace AppBancoDigital.View
             img_programar.Source = ImageSource.FromResource("AppBancoDigital.Assets.agenda.png");
             img_copia_cola.Source = ImageSource.FromResource("AppBancoDigital.Assets.interface.png");
             img_qr_code.Source = ImageSource.FromResource("AppBancoDigital.Assets.codigo-qr.png");
+
+            img_cobrar.Source = ImageSource.FromResource("AppBancoDigital.Assets.charges.png");
+            img_depositar.Source = ImageSource.FromResource("AppBancoDigital.Assets.deposito.png");
         }
     }
 }
