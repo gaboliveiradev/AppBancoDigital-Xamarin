@@ -7,8 +7,20 @@
             <!-- Header + Title Área Pix -->
             <StackLayout>
                 <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *">
-                    <Label Text="X" Grid.Row="0" Grid.Column="0" Padding="15,15,0,0" />
-                    <Label HorizontalOptions="End" Text="?" Grid.Row="0" Grid.Column="1" Padding="0,15,15,0" />
+                    <StackLayout Grid.Row="0" Grid.Column="0" Padding="15,15,0,0" HorizontalOptions="Start">
+                        <Image x:Name="img_close" WidthRequest="20">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="onClickCloseAreaPix" Tapped="onClickCloseAreaPix_Tapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="1" Padding="0,15,15,0" HorizontalOptions="End">
+                        <Image x:Name="img_info" WidthRequest="20">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="hadleClickInfo" Tapped="hadleClickInfo_Tapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
                     <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
                         <Label Text="Área Pix" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" Padding="15,15, 0, 15" FontSize="28" TextColor="#000"/>
                         <Label Text="Envie e receba pagamento a qualquer hora e dia da semana, sem pagar nada por isso." Padding="15,0,0,15"/>
@@ -55,7 +67,7 @@
             </StackLayout>
             
             <!-- Receber -->
-            <StackLayout>
+            <StackLayout Padding="0,0,0,15">
                 <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, *, *">
                     <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="Receber" FontSize="22" TextColor="#000" Padding="15,0,0,15" FontAttributes="Bold" />
                     
@@ -76,12 +88,66 @@
                     <Label Text="Depositar" HorizontalOptions="Center" Grid.Row="2" Grid.Column="2" />
                 </Grid>
             </StackLayout>
-            
-            <!-- Registrar ou trazer chaves pix -->
-            <StackLayout>
-                <Label Text="Registrar ou trazer chaves" TextColor="#000" FontAttributes="Bold" FontSize="16" Padding="15,30,0,0"/>
-                <Label Text="Registre uma nova chave ou faça uma portabilidade para o Nubank" Padding="15,0,0,0" />
+
+            <!-- Registrar Chaves + Configurar Pix -->
+            <StackLayout VerticalOptions="EndAndExpand" Padding="0,0,0,50">
+                <!-- Registrar ou trazer chaves pix -->
+                <StackLayout>
+                    <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="340, *">
+                        <Label 
+                        Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                        Text="Registrar ou trazer chaves" 
+                        TextColor="#000" 
+                        FontAttributes="Bold" 
+                        FontSize="16" 
+                        Padding="15,0,0,0"
+                    />
+                        <Label 
+                        Grid.Row="1"
+                        Text="Registre uma nova chave ou faça uma portabilidade para o Nubank" 
+                        Padding="15,0,0,5" 
+                    />
+                        <Image 
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        x:Name="img_chevron_left"  
+                        VerticalOptions="Start"
+                        HorizontalOptions="Center"
+                        WidthRequest="18"
+                    />
+                    </Grid>
+                    <Rectangle HeightRequest="1" Background="#d3d3d3" />
+                </StackLayout>
+
+                <!-- Configurar Pix -->
+                <StackLayout>
+                    <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="340, *">
+                        <Label 
+                        Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                        Text="Configurar Pix" 
+                        TextColor="#000" 
+                        FontAttributes="Bold" 
+                        FontSize="16" 
+                        Padding="15,0,0,0"
+                    />
+                        <Label 
+                        Grid.Row="1"
+                        Text="Gerencie seu limite diário de transferência ou suas chaves Pix." 
+                        Padding="15,0,0,5" 
+                    />
+                        <Image 
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        x:Name="img_chevron_left_configurar"  
+                        VerticalOptions="Start"
+                        HorizontalOptions="Center"
+                        WidthRequest="18"
+                    />
+                    </Grid>
+                    <Rectangle HeightRequest="1" Background="#d3d3d3" />
+                </StackLayout>
             </StackLayout>
+          
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

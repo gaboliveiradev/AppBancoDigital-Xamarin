@@ -5,9 +5,13 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="#711cb6" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
-                <Label x:Name="lbl_nome" FontAttributes="Bold" FontSize="Medium" Text="" HorizontalTextAlignment="Start" TextColor="#fff" />
-            </Frame>
+            <StackLayout>
+                <Frame BackgroundColor="#711cb6" HeightRequest="70">
+                    <Label x:Name="lbl_nome" FontAttributes="Bold" FontSize="Medium" Text="" HorizontalTextAlignment="Start" TextColor="#fff" />
+                </Frame>
+            </StackLayout>
+            
+            
 
             <Frame HasShadow="True" x:Name="frm_saldo" CornerRadius="10" BackgroundColor="White" Margin="15" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
                 <Grid RowDefinitions="*, *, *, *, *" ColumnDefinitions="*, *, *, *">

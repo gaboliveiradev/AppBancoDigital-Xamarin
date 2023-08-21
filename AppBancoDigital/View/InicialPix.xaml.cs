@@ -24,6 +24,20 @@ namespace AppBancoDigital.View
 
             img_cobrar.Source = ImageSource.FromResource("AppBancoDigital.Assets.charges.png");
             img_depositar.Source = ImageSource.FromResource("AppBancoDigital.Assets.deposito.png");
+            img_close.Source = ImageSource.FromResource("AppBancoDigital.Assets.fechar.png");
+            img_info.Source = ImageSource.FromResource("AppBancoDigital.Assets.info.png");
+            img_chevron_left.Source = ImageSource.FromResource("AppBancoDigital.Assets.chevron_left.png");
+            img_chevron_left_configurar.Source = ImageSource.FromResource("AppBancoDigital.Assets.chevron_left.png");
+        }
+
+        private async void onClickCloseAreaPix_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Home());
+        }
+
+        private void hadleClickInfo_Tapped(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -25,12 +25,15 @@
   <ItemGroup>
     <None Remove="Assets\agenda.png" />
     <None Remove="Assets\charges.png" />
+    <None Remove="Assets\chevron_left.png" />
     <None Remove="Assets\cobrar.png" />
     <None Remove="Assets\codigo-qr.png" />
     <None Remove="Assets\cpf.png" />
     <None Remove="Assets\data.png" />
     <None Remove="Assets\deposito.png" />
     <None Remove="Assets\details.png" />
+    <None Remove="Assets\fechar.png" />
+    <None Remove="Assets\info.png" />
     <None Remove="Assets\interface.png" />
     <None Remove="Assets\limite.png" />
     <None Remove="Assets\logo.png" />
@@ -59,10 +62,19 @@
     <EmbeddedResource Include="Assets\charges.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Assets\chevron_left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Assets\codigo-qr.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\deposito.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\fechar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\info.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\interface.png">
