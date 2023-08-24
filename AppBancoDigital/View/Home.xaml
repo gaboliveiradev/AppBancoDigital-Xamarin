@@ -5,9 +5,17 @@
     
     <ContentPage.Content>
         <StackLayout>
+            <!-- Header -->
             <StackLayout>
-                <Frame BackgroundColor="#711cb6" HeightRequest="70">
-                    <Label x:Name="lbl_nome" FontAttributes="Bold" FontSize="Medium" Text="" HorizontalTextAlignment="Start" TextColor="#fff" />
+                <Frame BackgroundColor="#711cb6" HeightRequest="85">
+                    <Grid RowDefinitions="*, *" ColumnDefinitions="40, *">
+                        <Frame CornerRadius="20" Grid.Row="0" Grid.Column="0" BackgroundColor="#9742db">
+                            
+                        </Frame>
+                        <StackLayout Grid.Row="0" Grid.Column="1" Background="red">
+                            
+                        </StackLayout>
+                    </Grid>
                 </Frame>
             </StackLayout>
             
