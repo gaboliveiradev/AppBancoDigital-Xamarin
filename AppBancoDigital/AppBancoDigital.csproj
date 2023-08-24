@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -48,6 +48,7 @@
     <None Remove="Assets\tipo.png" />
     <None Remove="Assets\transferir-dinheiro.png" />
     <None Remove="Assets\transferir.png" />
+    <None Remove="Assets\user.png" />
     <None Remove="Assets\wave.svg" />
   </ItemGroup>
 
@@ -139,6 +140,12 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Xamarin.Forms.MaskedEntry" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

@@ -23,6 +23,8 @@ namespace AppBancoDigital.View
             img_transferir.Source = ImageSource.FromResource("AppBancoDigital.Assets.transferir.png");
             img_cobrar.Source = ImageSource.FromResource("AppBancoDigital.Assets.cobrar.png");
             img_limite.Source = ImageSource.FromResource("AppBancoDigital.Assets.limite.png");
+
+            img_profile.Source = ImageSource.FromResource("AppBancoDigital.Assets.user.png");
         }
 
         public Home()
@@ -43,7 +45,7 @@ namespace AppBancoDigital.View
             {
                 lbl_saldo.Text = c.saldo.ToString("C", new CultureInfo("pt-BR"));
                 lbl_limite.Text = c.limite.ToString("C", new CultureInfo("pt-BR"));
-                lbl_nome.Text = $"Bem Vindo(a), {nomeCorrentista}.";
+                lbl_nome.Text = $"Olá, {nomeCorrentista}.";
             }
             else
             {
