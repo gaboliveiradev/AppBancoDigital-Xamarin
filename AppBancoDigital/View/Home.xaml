@@ -16,8 +16,11 @@
                             </Image.GestureRecognizers>
                         </Image>
 
-                        <StackLayout Grid.Row="0" Grid.Column="1" Background="red">
-                            
+                        <StackLayout Grid.Row="0" Grid.Column="1" Background="green" HorizontalOptions="End">
+                            <Grid RowDefinitions="40" ColumnDefinitions="40, 40">
+                                <Image Grid.Row="0" Grid.Column="0" x:Name="img_olho"/>
+                                <Image Grid.Row="0" Grid.Column="1" x:Name="?"/>
+                            </Grid>
                         </StackLayout>
 
                         <Label x:Name="lbl_nome" Padding="0,15,0,0" FontSize="18" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Olá, Gabriel" FontAttributes="Bold" TextColor="#fff" />

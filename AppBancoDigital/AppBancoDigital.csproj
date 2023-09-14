@@ -39,10 +39,12 @@
     <None Remove="Assets\logo.png" />
     <None Remove="Assets\logo_back_purple.png" />
     <None Remove="Assets\logo_back_white.png" />
+    <None Remove="Assets\mostrar.png" />
     <None Remove="Assets\nome.png" />
     <None Remove="Assets\ocultado.png" />
     <None Remove="Assets\ocultar.png" />
     <None Remove="Assets\olho-aberto.png" />
+    <None Remove="Assets\olho-fechado.png" />
     <None Remove="Assets\pix.png" />
     <None Remove="Assets\senha.png" />
     <None Remove="Assets\tipo.png" />
@@ -79,6 +81,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\interface.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\mostrar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\olho-fechado.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\transferir-dinheiro.png">
