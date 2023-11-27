@@ -19,7 +19,7 @@
                         <StackLayout Grid.Row="0" Grid.Column="1" Background="green" HorizontalOptions="End">
                             <Grid RowDefinitions="40" ColumnDefinitions="40, 40">
                                 <Image Grid.Row="0" Grid.Column="0" x:Name="img_olho"/>
-                                <Image Grid.Row="0" Grid.Column="1" x:Name="?"/>
+                                <Label x:Name="lbl_info" Grid.Row="0" Grid.Column="1" Text="?"/>
                             </Grid>
                         </StackLayout>
 
